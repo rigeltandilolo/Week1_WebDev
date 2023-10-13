@@ -1,6 +1,7 @@
 import logo from './Rigel Foto.jpg';
 import './App.css';
-import { useState } from 'react';
+import React , { useState } from 'react';
+
 
 function App() {
   const [isCircular, setIsCircular] = useState(false);
@@ -17,59 +18,65 @@ function App() {
 
   const toggleCircular = () => {
     setIsCircular(!isCircular);
-  }
+  };
 
-  return (
-    <div>
-      <div className="App">
-
-        <div className='section1'>
-          {/* Div untuk Gambar */}
-          <div className="Foto">
-            <img src={logo} className="Foto" alt="logo" style={imgStyle}/>
-          </div>
-
-          {/* Div untuk Nama */}
-          <div className='nama'>
-            <h1>RIGEL SUNDUN TANDILOLO</h1>
-          </div>
-        </div>
-
-        <div className='section2'>
-          {/* Div untuk 2 poin */}
-          <div className='poinKiri'>
-            <p>Gender : Male</p>
-            <p>Career : Ga Tau jga</p>
-          </div>
-
-          {/* Div untuk 4 poin */}
-          <div className='poinKanan'>
-            <p>Angkatan : 2022/2023</p>
-            <p>Jalur Sukses : Jalur Percaya Yesus</p>
-            <p>Jurusan : IMT - Full Stack Development</p>
-            <p>Hobi : Mendesain, Ngoding, Menyanyi, Sekian</p>
-          </div>
-        </div>
-        <div className='organisasi'>
-          <h1>PENGALAMAN BERORGANISASI</h1>
-
-          <div className='organisasipenjelas'>
-          <h1 className='judulorganisasi'>INFINITY GENERASI KE-2 UC MAKASSAR</h1>
-          <pre>Bekerja sebagai Koordinator Divisi Media yang bertugas
-            untuk mengkoordinasi antar divisi serta menjadi ketua dari
-            divisi Media.</pre>
-
-          <h1 className='judulorganisasi'>O-WEEK UC MAKASSAR 2023</h1>
-          <pre>
-            Bekerja sampai tipes dan dbd.
-          </pre>
-          </div>
-
-          <button onClick={toggleCircular}>Ubah Ukuran Foto</button>
-        </div>
-      </div>
-
-    </div>
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'div',
+      { className: 'App' },
+      React.createElement(
+        'div',
+        { className: 'section1' },
+        React.createElement(
+          'div',
+          { className: 'Foto' },
+          React.createElement('img', { src: logo, className: 'Foto', alt: 'logo', style: imgStyle })
+        ),
+        React.createElement(
+          'div',
+          { className: 'nama' },
+          React.createElement('h1', null, 'RIGEL SUNDUN TANDILOLO')
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'section2' },
+        React.createElement(
+          'div',
+          { className: 'poinKiri' },
+          React.createElement('p', null, 'Gender : Male'),
+          React.createElement('p', null, 'Career : Ga Tau jga')
+        ),
+        React.createElement(
+          'div',
+          { className: 'poinKanan' },
+          React.createElement('p', null, 'Angkatan : 2022/2023'),
+          React.createElement('p', null, 'Jalur Sukses : Jalur Percaya Yesus'),
+          React.createElement('p', null, 'Jurusan : IMT - Full Stack Development'),
+          React.createElement('p', null, 'Hobi : Mendesain, Ngoding, Menyanyi, Sekian')
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'organisasi' },
+        React.createElement('h1', null, 'PENGALAMAN BERORGANISASI'),
+        React.createElement(
+          'div',
+          { className: 'organisasipenjelas' },
+          React.createElement('h1', { className: 'judulorganisasi' }, 'INFINITY GENERASI KE-2 UC MAKASSAR'),
+          React.createElement(
+            'pre',
+            null,
+            'Bekerja sebagai Koordinator Divisi Media yang bertugas untuk mengkoordinasi antar divisi serta menjadi ketua dari divisi Media.'
+          ),
+          React.createElement('h1', { className: 'judulorganisasi' }, 'O-WEEK UC MAKASSAR 2023'),
+          React.createElement('pre', null, 'Bekerja sampai tipes dan dbd.')
+        ),
+        React.createElement('button', { onClick: toggleCircular }, 'Ubah Ukuran Foto')
+      )
+    )
   );
 }
 
